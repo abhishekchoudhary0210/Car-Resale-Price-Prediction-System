@@ -450,7 +450,7 @@ body_type = body_dic[body_type]
 # 7. model of the car for specific brand
 model_options = find_model(brand_inp)
 model_inp = col2.selectbox(
-    'Enter the model for the selected brand----------------------------', 
+    'Enter the model for the selected brand--------------------------', 
     options=model_options
 )
 model = model_dic[model_inp]
