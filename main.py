@@ -4,69 +4,52 @@ import numpy as np
 import joblib
 import base64
 
-
-
-
+# ----------- Functions -----------
 def add_bg_image(image_file):
-    import base64
-    import streamlit as st
-
     with open(image_file, "rb") as f:
         img_data = f.read()
     b64_encoded = base64.b64encode(img_data).decode()
     
     style = f"""
-        <style>
-        .stApp {{
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url(data:image/jpg;base64,{b64_encoded});
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }}
-        .main .block-container {{
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }}
-        
-        /* Dark and bold text styling */
-        * {{
-            color: #111111 !important;
-            font-weight: 600 !important;
-        }}
-        
-        /* Headings */
-        h1, h2, h3, h4, h5, h6 {{
-            color: #000000 !important;
-            font-weight: 700 !important;
-        }}
-        
-        /* Input labels */
-        label {{
-            font-weight: 600 !important;
-            color: #111111 !important;
-        }}
-        
-        /* Input fields */
-        .stTextInput input, .stNumberInput input, .stSelectbox select {{
-            color: #111111 !important;
-            font-weight: 500 !important;
-        }}
-        
-        /* Button text */
-        .stButton button {{
-            color: white !important;
-            font-weight: 600 !important;
-        }}
-        </style>
+    <style>
+    .stApp {{
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                    url(data:image/jpg;base64,{b64_encoded});
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }}
+    .main .block-container {{
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        padding: 2rem;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }}
+    * {{
+        color: #111111 !important;
+        font-weight: 600 !important;
+    }}
+    h1, h2, h3, h4, h5, h6 {{
+        color: #000000 !important;
+        font-weight: 700 !important;
+    }}
+    label {{
+        font-weight: 600 !important;
+        color: #111111 !important;
+    }}
+    .stTextInput input, .stNumberInput input, .stSelectbox select {{
+        color: #111111 !important;
+        font-weight: 500 !important;
+    }}
+    .stButton button {{
+        color: white !important;
+        font-weight: 600 !important;
+    }}
+    </style>
     """
     st.markdown(style, unsafe_allow_html=True)
-
-
 
 # input dict for categorical label
 # brand dict
@@ -383,7 +366,7 @@ engine_type_list = ['Diesel', 'Gas', 'Other', 'Petrol']
 registration_list = ['no', 'yes']
 
 # setting custom tab
-st.set_page_config(page_title='Used Car price Prediction by Subha', page_icon='🚗')
+st.set_page_config(page_title='Used Car price Prediction', page_icon='🚗')
 
 add_bg_image('Assets/logo-car.png')
 
