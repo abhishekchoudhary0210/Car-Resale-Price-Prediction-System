@@ -8,16 +8,21 @@ import base64
 
 
 def add_bg_image(image_file):
+    import base64
+    import streamlit as st
+
     with open(image_file, "rb") as f:
         img_data = f.read()
     b64_encoded = base64.b64encode(img_data).decode()
+    
     style = f"""
         <style>
         .stApp {{
-            background-image: url(data:image/jpg;base64,{b64_encoded});
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url(data:image/jpg;base64,{b64_encoded});
             background-size: cover;
             background-position: center;
-            background-opacity: 0.8;
+            background-attachment: fixed;
         }}
         .main .block-container {{
             background-color: rgba(255, 255, 255, 0.15);
@@ -34,7 +39,7 @@ def add_bg_image(image_file):
             font-weight: 600 !important;
         }}
         
-        /* Specific element styling */
+        /* Headings */
         h1, h2, h3, h4, h5, h6 {{
             color: #000000 !important;
             font-weight: 700 !important;
