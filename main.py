@@ -4,6 +4,9 @@ import numpy as np
 import joblib
 import base64
 
+import base64
+import streamlit as st
+
 # ----------- Functions -----------
 def add_bg_image(image_file):
     with open(image_file, "rb") as f:
@@ -19,37 +22,64 @@ def add_bg_image(image_file):
         background-position: center;
         background-attachment: fixed;
     }}
+
     .main .block-container {{
-        background-color: rgba(255, 255, 255, 0.15);
+        background-color: rgba(255, 255, 255, 0.10);
         border-radius: 15px;
         padding: 2rem;
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     }}
+
     * {{
-        color: #111111 !important;
+        color: #FFFFFF !important;
         font-weight: 600 !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }}
+
     h1, h2, h3, h4, h5, h6 {{
-        color: #000000 !important;
-        font-weight: 700 !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
     }}
+
     label {{
+        color: #FFFFFF !important;
         font-weight: 600 !important;
-        color: #111111 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }}
+
     .stTextInput input, .stNumberInput input, .stSelectbox select {{
-        color: #111111 !important;
+        color: #FFFFFF !important;
+        background-color: rgba(0, 0, 0, 0.3) !important;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem;
         font-weight: 500 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }}
+
     .stButton button {{
         color: white !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
+        background-color: #111111;
+        border: none;
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }}
+
+    .stButton button:hover {{
+        background-color: #333333;
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     }}
     </style>
     """
     st.markdown(style, unsafe_allow_html=True)
+
 
 # input dict for categorical label
 # brand dict
