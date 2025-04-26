@@ -382,14 +382,14 @@ st.set_page_config(page_title='Used Car price Prediction by Subha', page_icon='ð
 
 # add_bg_image('car-logo.png')
 
-add_bg_image('Assets/logo-car.png') 
+add_bg_image('logo-car.png') 
 
 
 
 # loading the dataset
 @st.cache_data  # Changed from st.cache
 def load_data():
-    return pd.read_csv('Assets/Car_cleaned_with_Model.csv')
+    return pd.read_csv('Car_cleaned_with_Model.csv')
 
 car = load_data()
 
