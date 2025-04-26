@@ -382,7 +382,7 @@ st.set_page_config(page_title='Used Car price Prediction by Subha', page_icon='ð
 
 # add_bg_image('car-logo.png')
 
-add_bg_image('logo-car.png') 
+add_bg_image('Assets/logo-car.png') 
 
 
 
