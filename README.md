@@ -2,6 +2,10 @@
 
 <p align="center">
   <img src="Assets/screenshot-Car-Price-Prediction.png" alt="Dashboard Preview" width="900">
+  <br>
+  <a href="https://car-resale-price-prediction-system.streamlit.app/#27c1978b" target="_blank">🚀 Try the Live Demo</a>
+  <br>
+  <sub>✨ Use Dark mode  - toggle in Streamlit's settings</sub>
 </p>
 
 A modern Machine Learning application that predicts the resale price of a used car based on its specifications. Built using a **Random Forest Regression model** and deployed with an interactive **Streamlit dashboard**.
